@@ -1,8 +1,8 @@
 import express from 'express'
-/* import { INSTRUMENTOS } from './bdficticia.js' */
 import dotenv from 'dotenv'
+import instrumentAssignedRouter from './routes/instrumentAssignedRouter.js'
 import { instrumentsRouter } from './routes/instrumentsRouter.js'
-/* import sayHello from './middlewares/sayHello.js' */
+import userRouter from './routes/userRouter.js'
 import errorHandler from './middlewares/errorHandler.js'
 import timeRequest from './middlewares/timeRequest.js'
 import registerHTTP from './middlewares/registerHTTP.js'
@@ -12,11 +12,12 @@ import registerHTTP from './middlewares/registerHTTP.js'
 dotenv.config()
 const app = express()
 app.use(express.json())
+
 app.use(timeRequest)
 app.use(registerHTTP)
-app.use('/api', instrumentsRouter())
+app.use('/api', instrumentsRouter(), userRouter, instrumentAssignedRouter)
 app.use(errorHandler)
-/* app.use(sayHello) */
+
 
 
 const SERVER_PORT = process.env.SERVER_PORT || 3001

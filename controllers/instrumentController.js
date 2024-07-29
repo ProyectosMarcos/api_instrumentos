@@ -4,10 +4,17 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 export const instrumentController = () => {
-    const getInstruments = async (_request, response, next) => {
+    const getInstruments = async (request, response, next) => {
+        const { query } = request
 
         try {
-            const instruments = await prisma.instruments.findMany()
+            const instruments = await prisma.instruments.findMany({
+                where: {
+                    instrument: {
+                        contains: query?.instrument ?? ''
+                    }
+                }
+            })
 
             const responseFormat = {
                 data: instruments,

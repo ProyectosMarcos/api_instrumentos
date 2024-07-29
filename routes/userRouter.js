@@ -1,10 +1,19 @@
-import { Router } from "express";
-import { instrumentController } from "../controllers/instrumentController.js";
-import { schemaValidator } from "../middlewares/validations.js";
-import { bodyInstrumentSchema, updateInstrumentSchema } from '../schemas/instrumentsSchemas.js'
+import { Router } from 'express'
+import { userController } from '../controllers/userController.js'
+
+const userRouter = Router()
+const { register, login, profile } = userController()
+
+userRouter.post('/register', register)
+userRouter.post('/login', login)
+userRouter.get('/profile/:id', profile)
+
+export default userRouter
 
 
-export const instrumentsRouter = () => {
+
+
+/* export const instrumentsRouter = () => {
     const instrumentsRouter = Router()
     const { getInstruments, createInstrument, getInstrumentbyId, updateInstrumentbyId, deleteInstrumentbyId } = instrumentController()
 
@@ -19,6 +28,4 @@ export const instrumentsRouter = () => {
         .delete(deleteInstrumentbyId)
     return instrumentsRouter
 }
-
-
-
+ */

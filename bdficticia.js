@@ -1,27 +1,27 @@
-export const INSTRUMENTOS = [
+export const INSTRUMENT = [
     {
         id: '1',
-        instrumento: 'piano',
-        tipo: "instrumento de teclas",
-        descripcion: 'produce sonidos al pulsar las teclas',
+        instrument: 'piano',
+        type: "instrumento de teclas",
+        description: 'produce sonidos al pulsar las teclas',
     },
     {
         id: '2',
-        instrumento: 'violoncello',
-        tipo: "instrumento de cuerdas frotadas",
-        descripcion: 'produce sonidos pulsando el diapasón y frotando con un arco las cuerdas',
+        instrument: 'violoncello',
+        type: "instrumento de cuerdas frotadas",
+        description: 'produce sonidos pulsando el diapasón y frotando con un arco las cuerdas',
     },
     {
         id: '3',
-        instrumento: 'guitarra',
-        tipo: "instrumento de cuerdas",
-        descripcion: "produce sonidos pulsando el diapasón, rasgueando las cuerdas",
+        instrument: 'guitarra',
+        type: "instrumento de cuerdas",
+        description: "produce sonidos pulsando el diapasón, rasgueando las cuerdas",
     },
     {
         id: '4',
-        instrumento: 'saxofón',
-        tipo: "instrumento de viento",
-        descripcion: 'produce sonidos al soplar en la boquilla',
+        instrument: 'saxofón',
+        type: "instrumento de viento",
+        description: 'produce sonidos al soplar en la boquilla',
     },
 
 

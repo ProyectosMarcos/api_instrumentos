@@ -59,5 +59,5 @@
       "instrumentId": 1
       }
 
-- GETl/api/profile/2
+- GET/api/profile/2
 - - Para obtener el usuario creado segun su id

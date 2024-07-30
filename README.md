@@ -31,7 +31,7 @@
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | instruments                   | Contiene el id del instrumento musical, descripción, tipo y nombre                                         |
 | users                         | Contiene el id de los usuarios, nombres , email, contraseñas y su rol, sea usuario o administrador         |
-| ussers_assignated_instruments | Contiene a los usuarios con sus instrumentos asignados, relacion entre id del usuario y id del instrumento |
+| users_assignated_instruments | Contiene a los usuarios con sus instrumentos asignados, relacion entre id del usuario y id del instrumento |
 
 ### Endpoints
 

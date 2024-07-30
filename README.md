@@ -36,3 +36,28 @@
 ### Endpoints
 
 - GET/api/instruments
+- - Para obtener nombre, descripcion y tipo de instrumento
+
+- POST/api/register/
+- - Para registrar un usuario, por determinado el rol es USER, podemos modificar esto colocando el rol sea USER o ADMIN {
+    "userId": 1,
+    "instrumentId": 1
+    }
+
+- POST/api/login/
+- - Para loguear nuestro usuario creado por ejemplo
+- {
+  "email": "m-fernandez988@hotmail.com",
+  "name": "Gabriel",
+  "password": "1010"
+  }
+
+- POST/api/instrument-assigned
+- - Para asignar un instrumento a un usuario por ejemplo
+- - - {
+      "userId": 1,
+      "instrumentId": 1
+      }
+
+- GETl/api/profile/2
+- - Para obtener el usuario creado segun su id

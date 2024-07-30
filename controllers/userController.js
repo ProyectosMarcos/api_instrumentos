@@ -1,9 +1,9 @@
 import httpStatus from '../helpers/httpStatus.js'
+
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-/* import bcrypt from 'bcrypt'
-import { verified } from '../utils/bcrypt.js' */
+import { generateToken, verifyToken } from '../utils/tokenManagement.js'
 import { encrypt, verified } from '../utils/bcrypt.js'
 
 export const userController = () => {
@@ -54,9 +54,18 @@ export const userController = () => {
                     message: 'Invalid credentials'
                 })
             }
+            /************AQUI GENERAMOS EL TOKEN***************/
+            const token = generateToken({ data: { email, role: user.role } })
+            const refreshToken = generateToken({
+                data: { email, role: user.role },
+                isRefresh: true,
+                expiresIn: '7d'
+            })
 
             return response.status(httpStatus.OK).json({
-                message: 'Login successful'
+                message: 'Login successful',
+                token,
+                refreshToken
             })
         } catch (error) {
             next(error)
@@ -64,6 +73,28 @@ export const userController = () => {
             await prisma.$disconnect()
         }
     }
+
+    const refreshToken = async (request, response, next) => {
+        const { refreshToken } = request.body
+        console.log("Generated refresh token:", refreshToken);
+
+        try {
+            const { role, email } = verifyToken(refreshToken, true)
+            const token = generateToken({
+                data: { email, role, message: 'Refrescado' }
+            })
+
+            return response.status(httpStatus.OK).json({
+                success: true,
+                token
+            })
+        } catch (error) {
+            next(error)
+        }
+    }
+
+
+
 
     const profile = async (request, response, next) => {
         const { id } = request.params
@@ -85,9 +116,11 @@ export const userController = () => {
         }
     }
 
+
     return {
         register,
         login,
-        profile
+        profile,
+        refreshToken
     }
 }

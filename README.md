@@ -39,7 +39,7 @@
 - - Para obtener nombre, descripcion y tipo de instrumento
 
 - POST/api/register/
-- - Para registrar un usuario, por defecto el rol es USER, podemos modificar esto colocando el rol sea USER o ADMIN
+- - Para registrar un usuario; El valor por defecto al registrar un usuario es USER, podemos modificar este valor colocando el rol, sea USER o ADMIN
   - - {
   "email": "m-fernandez988@hotmail.com",
   "name": "Gabriel",

@@ -39,10 +39,8 @@
 - - Para obtener nombre, descripcion y tipo de instrumento
 
 - POST/api/register/
-- - Para registrar un usuario, por determinado el rol es USER, podemos modificar esto colocando el rol sea USER o ADMIN {
-    "userId": 1,
-    "instrumentId": 1
-    }
+- - Para registrar un usuario, por determinado el rol es USER, podemos modificar esto colocando el rol sea USER o ADMIN 
+   
 
 - POST/api/login/
 - - Para loguear nuestro usuario creado por ejemplo

@@ -5,7 +5,7 @@
 - Contiene validaciones de datos con dependencia Joi version 17.13.3
 - Hash para las contraseñas
 - Tokens
-- ORM Prisma para la creacion de tablas
+- ORM Prisma para la creacion de tablas y schema
 
 ## Entorno de desarrollo
 
@@ -39,7 +39,13 @@
 - - Para obtener nombre, descripcion y tipo de instrumento
 
 - POST/api/register/
-- - Para registrar un usuario, por determinado el rol es USER, podemos modificar esto colocando el rol sea USER o ADMIN 
+- - Para registrar un usuario, por determinado el rol es USER, podemos modificar esto colocando el rol sea USER o ADMIN
+  - - {
+  "email": "m-fernandez988@hotmail.com",
+  "name": "Gabriel",
+  "password": "1010"
+   "role":"ADMIN"
+  }
    
 
 - POST/api/login/
